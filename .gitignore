@@ -1,0 +1,9 @@
+# compiled classes
+out/
+*.class
+
+# local packaging
+*.zip
+
+# Python bytecode
+__pycache__/

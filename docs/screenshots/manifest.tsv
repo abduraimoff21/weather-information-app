@@ -1,0 +1,12 @@
+01_welcome.png	-	-	-
+phase_sunrise.png	Honolulu, Hawaii, United States	2026-10-27T07:00	Pacific/Honolulu
+phase_day.png	Los Angeles, California, United States	2026-10-27T10:00	America/Los_Angeles
+phase_sunset.png	Reykjavik, Capital Region, Iceland	2026-10-27T17:00	Atlantic/Reykjavik
+phase_night.png	Cairo, Cairo Governorate, Egypt	2026-10-27T20:00	Africa/Cairo
+02_result_celsius.png	Los Angeles, California, United States	2026-10-27T10:00	America/Los_Angeles
+03_result_fahrenheit.png	Los Angeles, California, United States	2026-10-27T10:00	America/Los_Angeles
+04_coordinates.png	48.86°N, 2.35°E	2026-10-27T18:00	Europe/Paris
+05_error_not_found.png	48.86°N, 2.35°E	2026-10-27T18:00	Europe/Paris
+06_error_invalid_input.png	48.86°N, 2.35°E	2026-10-27T18:00	Europe/Paris
+07_error_invalid_coordinates.png	48.86°N, 2.35°E	2026-10-27T18:00	Europe/Paris
+08_error_no_connection.png	-	-	-

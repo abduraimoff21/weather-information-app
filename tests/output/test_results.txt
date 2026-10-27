@@ -1,0 +1,253 @@
+# Unit conversion
+PASS 0 C is 32 F
+PASS 100 C is 212 F
+PASS -40 C is -40 F
+PASS 36.6 C is 97.88 F
+PASS Celsius stays unchanged
+PASS 36 km/h is 10 m/s
+PASS 100 km/h is 62.1371 mph
+PASS 100 km/h is 53.9957 knots
+PASS km/h stays unchanged
+# Display formatting
+PASS temperature in Celsius
+PASS temperature in Fahrenheit
+PASS rounded temperature
+PASS negative zero is shown as 0.0
+PASS negative temperature
+PASS wind speed in mph
+PASS compass: 0 degrees is N
+PASS compass: 90 degrees is E
+PASS compass: 261 degrees is W
+PASS compass: 350 degrees is N
+PASS compass: 360 degrees is N
+PASS compass: -90 degrees is W
+PASS pressure is rounded
+PASS date and time
+PASS unknown clock time
+PASS history timestamp
+PASS day name for today
+PASS day name for tomorrow
+# Weather codes and icons
+PASS code 0 text
+PASS code 0 icon
+PASS code 2 icon
+PASS code 3 icon
+PASS code 45 icon
+PASS code 53 icon
+PASS code 61 text
+PASS code 61 icon
+PASS code 75 icon
+PASS code 95 icon
+PASS unknown code text
+PASS unknown code icon
+PASS every icon draws in day and night variants
+# Time of day (dynamic background)
+PASS 03:00 is night
+PASS 05:59 is still night
+PASS 06:00 is sunrise
+PASS 07:30 is sunrise
+PASS 07:46 is day
+PASS 12:00 is day
+PASS 15:26 is day
+PASS 15:27 is sunset
+PASS 16:45 (after sunset) is sunset
+PASS 17:26 is sunset
+PASS 17:27 is night
+PASS 23:30 is night
+PASS no sun times: 06:00 uses the clock
+PASS no sun times: 12:00 uses the clock
+PASS no sun times: 18:00 uses the clock
+PASS no sun times: 22:00 uses the clock
+PASS impossible sun times use the clock
+PASS clock 04:59 is night
+PASS clock 19:29 is sunset
+# JSON reader
+PASS string
+PASS negative number
+PASS exponent
+PASS boolean
+PASS JSON null counts as missing
+PASS array size
+PASS array element
+PASS deep lookup
+PASS absent property is missing
+PASS absent deep lookup never throws
+PASS fallback for the wrong type
+PASS escapes
+PASS unicode escape
+PASS whitespace is ignored
+PASS empty object
+PASS rejects malformed JSON: 
+PASS rejects malformed JSON: {
+PASS rejects malformed JSON: [1,]
+PASS rejects malformed JSON: {"a":}
+PASS rejects malformed JSON: abc
+PASS rejects malformed JSON: {"a":1} x
+PASS rejects malformed JSON: "open
+PASS rejects malformed JSON: {a:1}
+PASS rejects malformed JSON: [1 2]
+PASS rejects malformed JSON: tru
+PASS rejects malformed JSON: "\q"
+PASS rejects malformed JSON: -
+PASS rejects malformed JSON: [[[...
+# Input validation
+PASS accepts the city "Paris"
+PASS accepts the city "Paris, France"
+PASS accepts the city "São Paulo"
+PASS accepts the city "Zürich"
+PASS accepts the city "St. John's"
+PASS accepts the city "Winston-Salem"
+PASS accepts the city "  new   york  "
+PASS accepts the city "東京"
+PASS accepts the city "Tashkent"
+PASS extra spaces are tidied
+PASS coordinates with comma
+PASS coordinates with a space
+PASS coordinates with a semicolon
+PASS coordinates at the limits
+PASS rejects invalid input: ""
+PASS rejects invalid input: "   "
+PASS rejects invalid input: "!!!"
+PASS rejects invalid input: "<script>alert(..."
+PASS rejects invalid input: "a"
+PASS rejects invalid input: "12345"
+PASS rejects invalid input: "48.85"
+PASS rejects invalid input: "91, 0"
+PASS rejects invalid input: "0, 181"
+PASS rejects invalid input: "-90.5, 10"
+PASS rejects invalid input: "Paris;DROP TAB..."
+PASS rejects invalid input: "xxxxxxxxxxxxxx..."
+PASS null input is invalid
+PASS latitude range error
+PASS the message names the problem
+# Search history
+PASS starts empty
+PASS three entries
+PASS newest first
+PASS oldest last
+PASS timestamp is kept
+PASS capacity is respected
+PASS the oldest entry was dropped
+PASS history survives a restart
+PASS accented text survives a restart
+PASS damaged lines are skipped
+PASS tabs and line breaks cannot corrupt the file
+PASS clear empties the list
+PASS clear empties the file
+# Weather service (local mock server)
+PASS geocoding: name
+PASS geocoding: region
+PASS geocoding: country
+PASS geocoding: latitude
+PASS geocoding: longitude
+PASS geocoding: label
+PASS geocoding request names the city
+PASS geocoding asks for one result
+PASS the request identifies the app
+PASS city names are URL-encoded
+PASS coordinates need no geocoding call
+PASS coordinate label
+PASS forecast request: latitude
+PASS forecast request: longitude
+PASS forecast request: timezone is automatic
+PASS forecast request: five days
+PASS forecast request: humidity and wind are requested
+PASS time zone
+PASS observation time
+PASS temperature
+PASS feels like
+PASS humidity
+PASS wind speed
+PASS wind direction
+PASS pressure
+PASS weather code
+PASS daytime flag
+PASS five forecast days
+PASS first day
+PASS first day high
+PASS first day low
+PASS first day precipitation
+PASS first day sunrise
+PASS first day sunset
+PASS missing precipitation is marked unknown
+PASS last day
+PASS unknown place is reported as not found
+PASS not-found message names the input
+PASS HTTP 500 is a service problem
+PASS HTTP 429 is a service problem
+PASS 429 message asks the user to wait
+PASS HTTP 400 is a service problem
+PASS 400 message repeats the reason from the service
+PASS unreadable reply is a service problem
+PASS error flag in a 200 reply is a service problem
+PASS reply without weather data is a service problem
+PASS a missing temperature is a service problem
+PASS an unreadable date is a service problem
+# Network failures
+PASS a slow service is a network problem
+PASS timeout message says it took too long
+PASS no connection is a network problem
+PASS connection message mentions the internet
+PASS no connection while fetching the forecast
+PASS an unknown host is a network problem
+# Window (against the mock server)
+PASS starts with an empty history
+PASS starts with a hint in the status bar
+PASS empty input is rejected with a message
+PASS unusable characters are rejected
+PASS out-of-range coordinates are rejected
+PASS invalid input never reaches the service
+PASS an unknown place shows 'Location not found'
+PASS a failed search is not added to the history
+PASS the window is usable again after an error
+PASS a successful search is confirmed
+PASS the search is added to the history
+PASS the current temperature is shown
+PASS the conditions are shown
+PASS the humidity is shown
+PASS the wind speed and direction are shown
+PASS the pressure is shown
+PASS sunrise and sunset are shown
+PASS the place and local time are shown
+PASS five forecast cards are shown
+PASS a forecast high and low are shown
+PASS a precipitation chance is shown
+PASS midday gives the day background
+PASS Fahrenheit is applied
+PASS miles per hour are applied
+PASS the forecast changes unit too
+PASS metres per second are applied
+PASS knots are applied
+PASS changing units does not call the service again
+PASS 20:30 gives the night background
+PASS 16:50 (after sunset) gives the sunset background
+PASS 06:30 gives the sunrise background
+PASS every successful search is in the history
+PASS a failing service shows 'Weather service problem'
+PASS the earlier result stays on screen after a failure
+PASS the failed request is not in the history
+PASS a coordinate search works
+PASS the history is stored in a file
+# Live Open-Meteo API (needs an internet connection)
+PASS live: London is found
+PASS live: London is in the United Kingdom
+PASS live: London's latitude is plausible
+PASS live: temperature is plausible
+PASS live: humidity is 0-100
+PASS live: wind speed is not negative
+PASS live: wind direction is 0-360
+PASS live: pressure is plausible
+PASS live: the conditions have a description
+PASS live: five forecast days
+PASS live: highs are not below lows
+PASS live: sunrise comes before sunset
+PASS live: time zone
+PASS live: the report is current (within a day of today)
+PASS live: 'Paris, Texas' finds the Texas Paris
+PASS live: 'Paris, France' finds the French Paris
+PASS live: Tashkent is found
+PASS live: Tashkent's time zone
+PASS live: Sydney coordinates give the Sydney time zone
+PASS live: a made-up place is not found
+
+240/240 checks passed
